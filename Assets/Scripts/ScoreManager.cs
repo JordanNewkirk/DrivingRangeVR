@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         ballsRemaining = startingBalls;
-        UpdateBallsRemaining();
+        UpdateScore(0);
 
         ballScore = ballPrefab.GetComponent<BallScore>();
         ballScore.Scored.AddListener(UpdateScore);
@@ -27,19 +27,15 @@ public class ScoreManager : MonoBehaviour
     void UpdateScore(int points)
     {
         score += points;
-        UpdateBallsRemaining();
-    }
-
-    void UpdateBallsRemaining()
-    {
         ballsRemaining--;
         UpdateUI();
 
-        if(ballsRemaining > 0)
+        if (ballsRemaining > 0)
         {
             SpawnBall();
         }
     }
+
 
     void SpawnBall()
     {
