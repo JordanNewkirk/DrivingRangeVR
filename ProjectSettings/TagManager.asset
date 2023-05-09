@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - GolfBall
   - ScoringArea
+  - GolfClub
   layers:
   - Default
   - TransparentFX

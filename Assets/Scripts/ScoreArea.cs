@@ -8,6 +8,7 @@ public class ScoreArea : MonoBehaviour
 
     public int GetPoints()
     {
+        Debug.Log("should be getting points ScoreArea script");
         return points;
     }
 }

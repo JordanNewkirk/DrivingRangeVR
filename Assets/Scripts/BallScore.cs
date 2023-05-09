@@ -12,6 +12,7 @@ public class BallScore : MonoBehaviour
     {
         if(other.CompareTag("ScoringArea"))
         {
+            Debug.Log("ball score trigger event");
             ScoreArea scoreArea = other.GetComponent<ScoreArea>();
             Scored.Invoke(scoreArea.GetPoints());
         }

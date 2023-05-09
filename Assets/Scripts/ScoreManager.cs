@@ -5,17 +5,23 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int startingBalls = 10;
+    /*public int startingBalls = 10;
     public GameObject ballPrefab;
-    public Transform ballSpawn;
+    public Transform ballSpawn;*/
+
+    public int maxBalls = 10; // the maximum number of balls that can be spawned
+    private int groundScore = 5; // the score for hitting the ground
+    //private int scoringAreaScore = 10; // the score for hitting the scoring area
+    private int totalScore; // the total score so far
+
     public TMP_Text scoreText;
     public TMP_Text ballsRemainingText;
 
-    private int score = 0;
-    private int ballsRemaining;
-    private BallScore ballScore;
+    //private int score = 0;
+    public int ballsRemaining = 10;
+    //private BallScore ballScore;
 
-    private void Start()
+    /*private void Start()
     {
         ballsRemaining = startingBalls;
         UpdateScore(0);
@@ -26,25 +32,55 @@ public class ScoreManager : MonoBehaviour
 
     void UpdateScore(int points)
     {
+        Debug.Log("Inside update score");
         score += points;
         ballsRemaining--;
         UpdateUI();
 
         if (ballsRemaining > 0)
         {
-            SpawnBall();
+            Debug.Log("Inside Spawnball");
+            //SpawnBall();
         }
     }
 
 
     void SpawnBall()
     {
+        Debug.Log("ball should spawn");
         Instantiate(ballPrefab, ballSpawn.position, Quaternion.identity);
     }
 
     void UpdateUI()
     {
+        Debug.Log("should be updating score");
         scoreText.text = "Score: " + score;
         ballsRemainingText.text = "Balls Remaining: " + ballsRemaining;
+    }*/
+
+    void Start()
+    {
+        ballsRemaining--;
+        totalScore = 0;
+        updateUI();
+    }
+
+    public void ballDestroyed()
+    {
+        ballsRemaining--;
+        updateUI();
+
+    }
+
+    void updateUI()
+    {
+        scoreText.text = "Total Score: " + totalScore.ToString();
+        ballsRemainingText.text = "Balls Remaining: " + (ballsRemaining).ToString() + " / " + maxBalls.ToString();
+    }
+
+    public void AddToScore(int points)
+    {
+        totalScore += points;
+        updateUI();
     }
 }
