@@ -11,7 +11,10 @@ public class ScoreManager : MonoBehaviour
 
     public int maxBalls = 10; // the maximum number of balls that can be spawned
     public int groundScore = 5; // the score for hitting the ground
-    public int scoringAreaScore = 10; // the score for hitting the scoring area
+    public int blueScore = 50;
+    public int yellowScore = 25;
+    public int redScore = 75;
+    public int purpleScore = 100;// the score for hitting the scoring area
     private int totalScore; // the total score so far
 
     public TMP_Text scoreText;

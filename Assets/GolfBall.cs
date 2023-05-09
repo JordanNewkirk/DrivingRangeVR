@@ -13,7 +13,7 @@ public class GolfBall : MonoBehaviour
     private float hitForce;
     private TrailRenderer trailRenderer;
     public float respawnTime = 1.0f;
-    public float removeTime = 5.0f;
+    //public float removeTime = 5.0f;
     public GameObject ballPrefab;
     public Transform ballSpawn;
 
@@ -51,11 +51,41 @@ public class GolfBall : MonoBehaviour
             }
             ballDestroyed = false;
         }
-        else if (collision.gameObject.CompareTag("ScoringArea"))
+        else if (collision.gameObject.CompareTag("BlueScore"))
         {
             if (!ballDestroyed && !scored)
             {
-                scoreManager.addToScore(scoreManager.scoringAreaScore);
+                scoreManager.addToScore(scoreManager.blueScore);
+                scored = true;
+                StartCoroutine(RespawnBall());
+            }
+            ballDestroyed = false;
+        }
+        else if (collision.gameObject.CompareTag("YellowScore"))
+        {
+            if (!ballDestroyed && !scored)
+            {
+                scoreManager.addToScore(scoreManager.yellowScore);
+                scored = true;
+                StartCoroutine(RespawnBall());
+            }
+            ballDestroyed = false;
+        }
+        else if (collision.gameObject.CompareTag("RedScore"))
+        {
+            if (!ballDestroyed && !scored)
+            {
+                scoreManager.addToScore(scoreManager.redScore);
+                scored = true;
+                StartCoroutine(RespawnBall());
+            }
+            ballDestroyed = false;
+        }
+        else if (collision.gameObject.CompareTag("PurpleScore"))
+        {
+            if (!ballDestroyed && !scored)
+            {
+                scoreManager.addToScore(scoreManager.purpleScore);
                 scored = true;
                 StartCoroutine(RespawnBall());
             }

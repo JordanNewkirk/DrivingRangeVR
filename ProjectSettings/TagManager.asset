@@ -8,6 +8,10 @@ TagManager:
   - GolfBall
   - ScoringArea
   - GolfClub
+  - BlueScore
+  - RedScore
+  - YellowScore
+  - PurpleScore
   layers:
   - Default
   - TransparentFX
