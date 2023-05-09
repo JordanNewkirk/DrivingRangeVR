@@ -18,6 +18,7 @@ public class GolfBall : MonoBehaviour
     public Transform ballSpawn;
 
     private bool ballDestroyed = false;
+    private bool scored = false;
   
 
     void Start()
@@ -40,15 +41,27 @@ public class GolfBall : MonoBehaviour
             ballDestroyed = true;
         }
 
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("ScoringArea"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            if (!ballDestroyed)
+            if (!ballDestroyed && !scored)
             {
+                scoreManager.addToScore(scoreManager.groundScore);
+                scored = true;
                 StartCoroutine(RespawnBall());
             }
             ballDestroyed = false;
         }
-       
+        else if (collision.gameObject.CompareTag("ScoringArea"))
+        {
+            if (!ballDestroyed && !scored)
+            {
+                scoreManager.addToScore(scoreManager.scoringAreaScore);
+                scored = true;
+                StartCoroutine(RespawnBall());
+            }
+            ballDestroyed = false;
+        }
+
     }
 
     IEnumerator RespawnBall()

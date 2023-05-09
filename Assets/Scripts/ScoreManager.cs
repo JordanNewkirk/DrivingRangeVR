@@ -10,8 +10,8 @@ public class ScoreManager : MonoBehaviour
     public Transform ballSpawn;*/
 
     public int maxBalls = 10; // the maximum number of balls that can be spawned
-    private int groundScore = 5; // the score for hitting the ground
-    //private int scoringAreaScore = 10; // the score for hitting the scoring area
+    public int groundScore = 5; // the score for hitting the ground
+    public int scoringAreaScore = 10; // the score for hitting the scoring area
     private int totalScore; // the total score so far
 
     public TMP_Text scoreText;
@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
         ballsRemainingText.text = "Balls Remaining: " + (ballsRemaining).ToString() + " / " + maxBalls.ToString();
     }
 
-    public void AddToScore(int points)
+    public void addToScore(int points)
     {
         totalScore += points;
         updateUI();

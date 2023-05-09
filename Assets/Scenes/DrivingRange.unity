@@ -736,10 +736,26 @@ PrefabInstance:
       objectReference: {fileID: 1519042583}
     - target: {fileID: 6597280500771975249, guid: d73e140c212c34844bc175064cdd7d22,
         type: 3}
+      propertyPath: maxDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6597280500771975249, guid: d73e140c212c34844bc175064cdd7d22,
+        type: 3}
+      propertyPath: maxHitForce
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6597280500771975249, guid: d73e140c212c34844bc175064cdd7d22,
+        type: 3}
+      propertyPath: minHitForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6597280500771975249, guid: d73e140c212c34844bc175064cdd7d22,
+        type: 3}
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 2015694881}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4550589924086389795, guid: d73e140c212c34844bc175064cdd7d22, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d73e140c212c34844bc175064cdd7d22, type: 3}
 --- !u!1 &346801602
 GameObject:
@@ -848,7 +864,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 350992544}
-  - component: {fileID: 350992545}
   m_Layer: 0
   m_Name: ScoreAreaRed
   m_TagString: ScoringArea
@@ -875,19 +890,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &350992545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350992543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a2e87bff5119547b4358e6f90f8963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
 --- !u!1 &391664690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,7 +1912,6 @@ GameObject:
   - component: {fileID: 590224721}
   - component: {fileID: 590224720}
   - component: {fileID: 590224723}
-  - component: {fileID: 590224724}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -1997,19 +1998,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.000009, y: 33.422512, z: 10.000009}
   m_Center: {x: 0, y: -16.711256, z: 0}
---- !u!114 &590224724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590224718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a2e87bff5119547b4358e6f90f8963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 5
 --- !u!1 &773658325
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,7 +3179,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1575140982}
-  - component: {fileID: 1575140983}
   m_Layer: 0
   m_Name: ScoreAreaPurple
   m_TagString: ScoringArea
@@ -3218,19 +3205,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1575140983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575140981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a2e87bff5119547b4358e6f90f8963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
 --- !u!1001 &1592798514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3681,9 +3655,10 @@ GameObject:
   - component: {fileID: 1635009507}
   - component: {fileID: 1635009506}
   - component: {fileID: 1635009505}
+  - component: {fileID: 1635009508}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: ScoringArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3765,6 +3740,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635009503}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &1635009508
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635009503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1659530239
 GameObject:
@@ -4091,7 +4080,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1794347142}
-  - component: {fileID: 1794347143}
   m_Layer: 0
   m_Name: ScoreAreaYellow
   m_TagString: ScoringArea
@@ -4118,19 +4106,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1794347143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794347141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a2e87bff5119547b4358e6f90f8963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
 --- !u!1001 &1801263488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4223,7 +4198,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1886162419}
-  - component: {fileID: 1886162420}
   m_Layer: 0
   m_Name: ScoreAreaBlue
   m_TagString: ScoringArea
@@ -4250,19 +4224,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1886162420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886162418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a2e87bff5119547b4358e6f90f8963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
 --- !u!1 &1899828843
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,9 +4236,10 @@ GameObject:
   - component: {fileID: 1899828847}
   - component: {fileID: 1899828846}
   - component: {fileID: 1899828845}
+  - component: {fileID: 1899828848}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: ScoringArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4360,6 +4322,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899828843}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &1899828848
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899828843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1915328006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4372,9 +4348,10 @@ GameObject:
   - component: {fileID: 1915328010}
   - component: {fileID: 1915328009}
   - component: {fileID: 1915328008}
+  - component: {fileID: 1915328011}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: ScoringArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4456,6 +4433,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915328006}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &1915328011
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915328006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1928759858
 PrefabInstance:
@@ -4767,6 +4758,7 @@ GameObject:
   - component: {fileID: 1995646398}
   - component: {fileID: 1995646397}
   - component: {fileID: 1995646396}
+  - component: {fileID: 1995646399}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -4852,6 +4844,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995646394}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &1995646399
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995646394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2015694880
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,10 +4887,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b187f4afb4bba874d9c5ec3217b6f6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBalls: 2
+  maxBalls: 10
+  groundScore: 5
+  scoringAreaScore: 10
   scoreText: {fileID: 476565038}
   ballsRemainingText: {fileID: 1986555278}
-  ballsRemaining: 2
+  ballsRemaining: 10
 --- !u!4 &2015694882
 Transform:
   m_ObjectHideFlags: 0
