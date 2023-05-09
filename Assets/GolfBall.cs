@@ -16,6 +16,8 @@ public class GolfBall : MonoBehaviour
     //public float removeTime = 5.0f;
     public GameObject ballPrefab;
     public Transform ballSpawn;
+    public AudioSource scoringSound;
+    public AudioSource ballHitSound;
 
     private bool ballDestroyed = false;
     private bool scored = false;
@@ -39,6 +41,7 @@ public class GolfBall : MonoBehaviour
             rb.AddForce(hitDirection.normalized * hitForce, ForceMode.Impulse);
             trailRenderer.enabled = true; // enable the trail renderer when the ball is hit
             ballDestroyed = true;
+            ballHitSound.Play();
         }
 
         if (collision.gameObject.CompareTag("Ground"))
@@ -65,6 +68,7 @@ public class GolfBall : MonoBehaviour
         {
             if (!ballDestroyed && !scored)
             {
+                scoringSound.Play();
                 scoreManager.addToScore(scoreManager.yellowScore);
                 scored = true;
                 StartCoroutine(RespawnBall());
