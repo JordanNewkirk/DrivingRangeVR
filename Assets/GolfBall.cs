@@ -38,6 +38,15 @@ public class GolfBall : MonoBehaviour
             float swingSpeed = golfClub.GetNormalizedSpeed();
             hitForce = Mathf.Lerp(minHitForce, maxHitForce, swingSpeed);
             Vector3 hitDirection = collision.contacts[0].point - transform.position;
+
+            // get the direction of the club
+            Vector3 clubDirection = golfClub.transform.forward;
+
+            // project the hitDirection onto the plane perpendicular to the clubDirection
+            Vector3 planeNormal = Vector3.Cross(clubDirection, Vector3.up);
+            hitDirection = Vector3.ProjectOnPlane(hitDirection, planeNormal);
+
+            // add a force in the modified hitDirection
             rb.AddForce(hitDirection.normalized * hitForce, ForceMode.Impulse);
             trailRenderer.enabled = true; // enable the trail renderer when the ball is hit
             ballDestroyed = true;
