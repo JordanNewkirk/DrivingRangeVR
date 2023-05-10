@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3ea91edf0971a3a4da0ea241ae7379d0
+  - enabled: 1
     path: Assets/Scenes/DrivingRange.unity
     guid: 5dbb501a8033a204c83e18675587316d
+  - enabled: 1
+    path: Assets/Scenes/RetryMenu.unity
+    guid: e1ae37f8401e6014cbbbc42486313cca
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

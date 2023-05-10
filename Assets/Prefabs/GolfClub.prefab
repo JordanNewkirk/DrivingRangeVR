@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3808802935388690544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6329594942868790149}
+  m_Layer: 0
+  m_Name: AttachTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6329594942868790149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3808802935388690544}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.97, y: 0.171, z: 7.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7973807157808397308}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &5536862006744644961
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,8 +89,8 @@ GameObject:
   - component: {fileID: 2777661241881040305}
   - component: {fileID: 1240046047134632006}
   - component: {fileID: 5982644005945836627}
-  - component: {fileID: 5982644005945836628}
   - component: {fileID: 5982644005945836626}
+  - component: {fileID: 5940067326299010179}
   m_Layer: 0
   m_Name: GolfClub
   m_TagString: GolfClub
@@ -80,6 +111,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8513287307473832541}
+  - {fileID: 6329594942868790149}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 215.354, y: 0, z: 0}
@@ -158,8 +190,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.536942, y: 1.1869211, z: 3.7557275}
-  m_Center: {x: 0.92959595, y: 0.1969747, z: 12.485191}
+  m_Size: {x: 2.9465094, y: 1.3713379, z: 3.138009}
+  m_Center: {x: 0.057759136, y: -0.013413067, z: -9.664389}
 --- !u!54 &5982644005945836627
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -176,7 +208,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5982644005945836628
+--- !u!114 &5982644005945836626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341843692200829254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d135dea17cfa8ab478c83c3cb4277057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSwingSpeed: 2
+  minSwingSpeed: 0.1
+--- !u!114 &5940067326299010179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,13 +234,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_InteractionManager: {fileID: 1113508085945318044}
+  m_Colliders:
+  - {fileID: 2777661241881040305}
+  - {fileID: 1240046047134632006}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -254,7 +302,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 6329594942868790149}
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
   m_VelocityDamping: 1
@@ -266,7 +314,7 @@ MonoBehaviour:
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
-  m_SmoothRotation: 1
+  m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
   m_ThrowOnDetach: 1
@@ -291,17 +339,3 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &5982644005945836626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7341843692200829254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d135dea17cfa8ab478c83c3cb4277057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSwingSpeed: 2
-  minSwingSpeed: 0.1

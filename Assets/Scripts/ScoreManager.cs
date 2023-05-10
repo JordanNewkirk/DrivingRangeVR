@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -85,5 +86,14 @@ public class ScoreManager : MonoBehaviour
     {
         totalScore += points;
         updateUI();
+    }
+
+    private void Update()
+    {
+        if(ballsRemaining == 0)
+        {
+            //Load retry scene
+            SceneManager.LoadScene("RetryMenu");
+        }
     }
 }
