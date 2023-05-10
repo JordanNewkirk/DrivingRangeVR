@@ -88,12 +88,4 @@ public class ScoreManager : MonoBehaviour
         updateUI();
     }
 
-    private void Update()
-    {
-        if(ballsRemaining == 0)
-        {
-            //Load retry scene
-            SceneManager.LoadScene("RetryMenu");
-        }
-    }
 }

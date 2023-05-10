@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GolfBall : MonoBehaviour
 {
@@ -122,6 +123,7 @@ public class GolfBall : MonoBehaviour
         if (scoreManager.ballsRemaining == 0)
         {
             // Display game over message or do other end game actions
+            SceneManager.LoadScene("RetryMenu");
         }
     }
 
