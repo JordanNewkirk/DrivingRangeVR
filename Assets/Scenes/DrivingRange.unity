@@ -4949,7 +4949,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2052690642
@@ -5233,7 +5233,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 1733297603}
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -6152,12 +6152,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4098236058594393543, guid: 5cfb81822bc0a64499d3acc0ba9fffa8,
         type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098236058594393543, guid: 5cfb81822bc0a64499d3acc0ba9fffa8,
+        type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1689572147}
     - target: {fileID: 4098236058594393543, guid: 5cfb81822bc0a64499d3acc0ba9fffa8,
         type: 3}
       propertyPath: m_Colliders.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098236058594393543, guid: 5cfb81822bc0a64499d3acc0ba9fffa8,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5385302992723533655, guid: 5cfb81822bc0a64499d3acc0ba9fffa8,
