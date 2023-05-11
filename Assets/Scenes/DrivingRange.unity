@@ -4897,10 +4897,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxBalls: 50
   groundScore: 5
-  blueScore: 1000
-  yellowScore: 1000
-  redScore: 1000
-  purpleScore: 1000
+  blueScore: 50
+  yellowScore: 25
+  redScore: 75
+  purpleScore: 100
   scoreText: {fileID: 476565038}
   ballsRemainingText: {fileID: 1986555278}
   ballsRemaining: 50
