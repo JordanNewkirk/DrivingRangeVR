@@ -68,6 +68,7 @@ public class GolfBall : MonoBehaviour
         {
             if (!ballDestroyed && !scored)
             {
+                scoringSound.Play();
                 scoreManager.addToScore(scoreManager.blueScore);
                 scored = true;
                 StartCoroutine(RespawnBall());
@@ -89,6 +90,7 @@ public class GolfBall : MonoBehaviour
         {
             if (!ballDestroyed && !scored)
             {
+                scoringSound.Play();
                 scoreManager.addToScore(scoreManager.redScore);
                 scored = true;
                 StartCoroutine(RespawnBall());
@@ -99,6 +101,7 @@ public class GolfBall : MonoBehaviour
         {
             if (!ballDestroyed && !scored)
             {
+                scoringSound.Play();
                 scoreManager.addToScore(scoreManager.purpleScore);
                 scored = true;
                 StartCoroutine(RespawnBall());
