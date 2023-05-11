@@ -9,9 +9,12 @@ public class GolfClub : MonoBehaviour
     private Vector3 lastPosition;
     private float currentSpeed;
 
+    private Vector3 startingPosition;
+
     void Start()
     {
         lastPosition = transform.position;
+        startingPosition = transform.position;
     }
 
     void Update()
@@ -25,5 +28,10 @@ public class GolfClub : MonoBehaviour
     public float GetNormalizedSpeed()
     {
         return Mathf.Clamp((currentSpeed - minSwingSpeed) / (maxSwingSpeed - minSwingSpeed), 0f, 1f);
+    }
+
+    public void ReturnToStartingPosition()
+    {
+        this.gameObject.transform.position = startingPosition;
     }
 }
